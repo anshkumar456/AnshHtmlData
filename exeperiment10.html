@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive E-commerce Navbar</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff5733; /* Accent color for the logo */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ff5733;
+        }
+
+        /* Icons (using text placeholders for simplicity) */
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .icon:hover {
+            color: #ff5733;
+        }
+
+        /* Mobile Menu Button (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle .bar {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none; /* Hide links by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjust based on navbar height */
+                right: 0;
+                background-color: #444;
+                width: 100%;
+                padding: 15px 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 10px 0;
+            }
+            
+            /* Class to show menu when toggled by JavaScript (optional but common) */
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">ShopName</div>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Icons and Mobile Toggle -->
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="nav-icons">
+                    <span class="icon">🔍 Search</span>
+                    <span class="icon">👤 Account</span>
+                …
